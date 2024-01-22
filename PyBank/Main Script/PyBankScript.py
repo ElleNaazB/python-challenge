@@ -99,5 +99,13 @@ analysis = (
 
 #printing the analysis on a seperate txt file 
 
-with open('financial_analysis.txt', 'w') as file:
-    file.write(analysis)
+# Define the output path in the '\PyBank\Analysis' directory
+analysis_dir = os.path.join(CURRENT_DIR, '..', 'Analysis')
+os.makedirs(analysis_dir, exist_ok=True)
+output_path = os.path.join(analysis_dir, 'financial_analysis.txt')
+
+    # Saving the analysis to the file
+with open(output_path, 'w') as file:
+        file.write(analysis)
+
+       
